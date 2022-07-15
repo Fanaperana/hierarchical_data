@@ -19,4 +19,8 @@ class Repository extends Model
         'parent_id',
         'directory'
     ];
+
+    public function childs() {
+        return $this->hasMany(Repository::class,'parent_id','id') ;
+    }
 }

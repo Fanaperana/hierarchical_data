@@ -17,7 +17,7 @@ return new class extends Migration
             Schema::create('repository', function (Blueprint $table) {
                 $table->bigIncrements('id');
                 $table->string('name', 255);
-                $table->tinyInteger('directory')->default(0);
+                $table->tinyInteger('directory')->default(1);
                 $table->foreignIdFor(Repository::class, 'parent_id')->nullable();
                 $table->timestamps();
             });
